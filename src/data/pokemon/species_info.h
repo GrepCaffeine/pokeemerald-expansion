@@ -80,7 +80,7 @@ const u8 gSilvallyNormalPokedexText[] = _(
     "trait that is well displayed in battle.");
 
 const u8 gSilvallyMemoryPokedexText[] = _(
-    "Upon awakening, its RKS System is\n"
+    "Upon awakening, its Rks System is\n"
     "activated. By employing specific\n"
     "memories, this Pokémon can adapt its\n"
     "type to confound its enemies.");

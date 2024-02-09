@@ -38,7 +38,7 @@ static const u8 sFirePunchDescription[] = _(
 
 static const u8 sIcePunchDescription[] = _(
     "An icy punch that may\n"
-#if B_USE_FROSTBITE == TRUE
+#if B_use_frostbite == True
     "leave the foe with frostbite.");
 #else
     "freeze the foe.");
@@ -90,7 +90,7 @@ static const u8 sFlyDescription[] = _(
 
 static const u8 sBindDescription[] = _(
     "Binds and squeezes the foe\n"
-    "for "BINDING_TURNS" turns.");
+    "for "Binding_turns" turns.");
 
 static const u8 sSlamDescription[] = _(
     "Slams the foe with a long\n"
@@ -150,7 +150,7 @@ static const u8 sBodySlamDescription[] = _(
 
 static const u8 sWrapDescription[] = _(
     "Wraps and squeezes the foe\n"
-    BINDING_TURNS" times with vines, etc.");
+    Binding_turns" times with vines, etc.");
 
 static const u8 sTakeDownDescription[] = _(
     "A reckless charge attack\n"
@@ -214,7 +214,7 @@ static const u8 sDisableDescription[] = _(
 
 static const u8 sAcidDescription[] = _(
     "Sprays a hide-melting acid.\n"
-#if B_UPDATED_MOVE_DATA >= GEN_4
+#if B_updated_move_data >= GEN_4
     "May lower Sp. Def.");
 #else
     "May lower Defense.");
@@ -246,7 +246,7 @@ static const u8 sSurfDescription[] = _(
 
 static const u8 sIceBeamDescription[] = _(
     "Blasts the foe with an icy\n"
-#if B_USE_FROSTBITE == TRUE
+#if B_use_frostbite == True
     "beam. May cause frostbite.");
 #else
     "beam that may freeze it.");
@@ -254,7 +254,7 @@ static const u8 sIceBeamDescription[] = _(
 
 static const u8 sBlizzardDescription[] = _(
     "Hits the foe with an icy\n"
-#if B_USE_FROSTBITE == TRUE
+#if B_use_frostbite == True
     "storm. May cause frostbite.");
 #else
     "storm that may freeze it.");
@@ -354,7 +354,7 @@ static const u8 sDragonRageDescription[] = _(
 
 static const u8 sFireSpinDescription[] = _(
     "Traps the foe in a ring of\n"
-    "fire for "BINDING_TURNS" turns.");
+    "fire for "Binding_turns" turns.");
 
 static const u8 sThunderShockDescription[] = _(
     "An electrical attack that\n"
@@ -534,7 +534,7 @@ static const u8 sWaterfallDescription[] = _(
 
 static const u8 sClampDescription[] = _(
     "Traps and squeezes the\n"
-    "foe for "BINDING_TURNS" turns.");
+    "foe for "Binding_turns" turns.");
 
 static const u8 sSwiftDescription[] = _(
     "Sprays star-shaped rays\n"
@@ -718,7 +718,7 @@ static const u8 sSnoreDescription[] = _(
 
 static const u8 sCurseDescription[] = _(
     "A move that functions\n"
-    "differently for GHOSTS.");
+    "differently for Ghosts.");
 
 static const u8 sFlailDescription[] = _(
     "Inflicts more damage when\n"
@@ -990,7 +990,7 @@ static const u8 sSunnyDayDescription[] = _(
 
 static const u8 sCrunchDescription[] = _(
     "Crunches with sharp fangs.\n"
-#if B_UPDATED_MOVE_DATA >= GEN_4
+#if B_updated_move_data >= GEN_4
     "May lower Defense.");
 #else
     "May lower Sp. Def.");
@@ -1026,7 +1026,7 @@ static const u8 sRockSmashDescription[] = _(
 
 static const u8 sWhirlpoolDescription[] = _(
     "Traps and hurts the foe in\n"
-    "a whirlpool for "BINDING_TURNS" turns.");
+    "a whirlpool for "Binding_turns" turns.");
 
 static const u8 sBeatUpDescription[] = _(
     "Summons party Pokémon to\n"
@@ -1150,7 +1150,7 @@ static const u8 sRevengeDescription[] = _(
 
 static const u8 sBrickBreakDescription[] = _(
     "Destroys barriers such as\n"
-    "REFLECT and causes damage.");
+    "Reflect and causes damage.");
 
 static const u8 sYawnDescription[] = _(
     "Lulls the foe into yawning,\n"
@@ -1342,7 +1342,7 @@ static const u8 sSkyUppercutDescription[] = _(
 
 static const u8 sSandTombDescription[] = _(
     "Traps and hurts the foe in\n"
-    "quicksand for "BINDING_TURNS" turns.");
+    "quicksand for "Binding_turns" turns.");
 
 static const u8 sSheerColdDescription[] = _(
     "A chilling attack that\n"
@@ -1846,7 +1846,7 @@ static const u8 sSpacialRendDescription[] = _(
 
 static const u8 sMagmaStormDescription[] = _(
     "Traps the foe in a vortex\n"
-    "of fire for "BINDING_TURNS" turns.");
+    "of fire for "Binding_turns" turns.");
 
 static const u8 sDarkVoidDescription[] = _(
     "Drags the foe into total\n"
@@ -2398,7 +2398,7 @@ static const u8 sNuzzleDescription[] = _(
 
 static const u8 sInfestationDescription[] = _(
     "The foe is infested and\n"
-    "attacked for "BINDING_TURNS" turns.");
+    "attacked for "Binding_turns" turns.");
 
 static const u8 sPowerUpPunchDescription[] = _(
     "A hard punch that raises\n"
@@ -2670,7 +2670,7 @@ static const u8 sPikaPapowDescription[] = _(
 
 static const u8 sBouncyBubbleDescription[] = _(
     "An attack that absorbs\n"
-#if B_UPDATED_MOVE_DATA >= GEN_8
+#if B_updated_move_data >= GEN_8
     "all the damage inflicted.");
 #else
     "half the damage inflicted.");
@@ -2943,7 +2943,7 @@ static const u8 sSurgingStrikesDescription[] = _(
 
 static const u8 sThunderCageDescription[] = _(
     "Traps the foe in a cage of\n"
-    "electricity for "BINDING_TURNS" turns.");
+    "electricity for "Binding_turns" turns.");
 
 static const u8 sDragonEnergyDescription[] = _(
     "The higher the user's HP\n"
@@ -2951,7 +2951,7 @@ static const u8 sDragonEnergyDescription[] = _(
 
 static const u8 sFreezingGlareDescription[] = _(
     "Shoots psychic power from\n"
-#if B_USE_FROSTBITE == TRUE
+#if B_use_frostbite == True
     "the eyes. May frostbite.");
 #else
     "the eyes. May freeze the foe.");

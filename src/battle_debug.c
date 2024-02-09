@@ -230,7 +230,7 @@ static const u8 sText_StealthRock[] = _("Stealth Rock");
 static const u8 sText_ToxicSpikes[] = _("Toxic Spikes");
 static const u8 sText_StickyWeb[] = _("Sticky Web");
 static const u8 sText_Steelsurge[] = _("Steelsurge");
-static const u8 sText_AI[] = _("AI");
+static const u8 sText_AI[] = _("Ai");
 static const u8 sText_NoBadMoves[] = _("No Bad Moves");
 static const u8 sText_Viability[] = _("Viability");
 static const u8 sText_TryFaint[] = _("Try Faint");
@@ -244,9 +244,9 @@ static const u8 sText_InDoubles[] = _("In Doubles");
 static const u8 sText_HpAware[] = _("HP aware");
 static const u8 sText_Unknown[] = _("Unknown");
 static const u8 sText_InLove[] = _("In Love");
-static const u8 sText_AIMovePts[] = _("AI Pts/Dmg");
-static const u8 sText_AiKnowledge[] = _("AI Info");
-static const u8 sText_AiParty[] = _("AI Party");
+static const u8 sText_AIMovePts[] = _("Ai Pts/Dmg");
+static const u8 sText_AiKnowledge[] = _("Ai Info");
+static const u8 sText_AiParty[] = _("Ai Party");
 
 static const u8 sText_EmptyString[] = _("");
 

@@ -1224,7 +1224,7 @@ const struct Item gItems[] =
 
     [ITEM_EXP_CANDY_XS] =
     {
-        .name = _("Exp.Candy XS"),
+        .name = _("Exp.Candy Xs"),
         .price = 20,
         .holdEffectParam = EXP_100,
         .description = sExpCandyXSDesc,
@@ -1272,7 +1272,7 @@ const struct Item gItems[] =
 
     [ITEM_EXP_CANDY_XL] =
     {
-        .name = _("Exp.Candy XL"),
+        .name = _("Exp.Candy Xl"),
         .price = 10000,
         .holdEffectParam = EXP_30000,
         .description = sExpCandyXLDesc,
@@ -8522,7 +8522,7 @@ const struct Item gItems[] =
 
     [ITEM_DNA_SPLICERS] =
     {
-        .name = _("DNA Splicers"),
+        .name = _("Dna Splicers"),
         .price = 0,
         .importance = 1,
         .description = sDNASplicersDesc,
@@ -8695,7 +8695,7 @@ const struct Item gItems[] =
 
     [ITEM_DOWSING_MACHINE] =
     {
-        .name = _("Dowsing MCHN"),
+        .name = _("Dowsing Mchn"),
         .price = 0,
         .description = sDowsingMachineDesc,
         .importance = 1,
@@ -8853,7 +8853,7 @@ const struct Item gItems[] =
 
     [ITEM_TEACHY_TV] =
     {
-        .name = _("Teachy TV"),
+        .name = _("Teachy Tv"),
         .price = 0,
         .description = sTeachyTVDesc,
         .importance = 1,

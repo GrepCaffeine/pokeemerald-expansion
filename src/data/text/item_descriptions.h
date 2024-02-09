@@ -149,7 +149,7 @@ static const u8 sPotionDesc[] = _(
 static const u8 sSuperPotionDesc[] = _(
     "Restores the HP of\n"
     "a Pokémon by\n"
-#if I_HEALTH_RECOVERY >= GEN_7
+#if I_health_recovery >= GEN_7
     "60 points.");
 #else
     "50 points.");
@@ -158,7 +158,7 @@ static const u8 sSuperPotionDesc[] = _(
 static const u8 sHyperPotionDesc[] = _(
     "Restores the HP of\n"
     "a Pokémon by\n"
-#if I_HEALTH_RECOVERY >= GEN_7
+#if I_health_recovery >= GEN_7
     "120 points.");
 #else
     "200 points.");
@@ -186,7 +186,7 @@ static const u8 sMaxReviveDesc[] = _(
 static const u8 sFreshWaterDesc[] = _(
     "A mineral water\n"
     "that restores HP\n"
-#if I_HEALTH_RECOVERY >= GEN_7
+#if I_health_recovery >= GEN_7
     "by 30 points.");
 #else
     "by 50 points.");
@@ -195,7 +195,7 @@ static const u8 sFreshWaterDesc[] = _(
 static const u8 sSodaPopDesc[] = _(
     "A fizzy soda drink\n"
     "that restores HP\n"
-#if I_HEALTH_RECOVERY >= GEN_7
+#if I_health_recovery >= GEN_7
     "by 50 points.");
 #else
     "by 60 points.");
@@ -204,7 +204,7 @@ static const u8 sSodaPopDesc[] = _(
 static const u8 sLemonadeDesc[] = _(
     "A very sweet drink\n"
     "that restores HP\n"
-#if I_HEALTH_RECOVERY >= GEN_7
+#if I_health_recovery >= GEN_7
     "by 70 points.");
 #else
     "by 80 points.");
@@ -218,7 +218,7 @@ static const u8 sMoomooMilkDesc[] = _(
 static const u8 sEnergyPowderDesc[] = _(
     "A bitter powder\n"
     "that restores HP\n"
-#if I_HEALTH_RECOVERY >= GEN_7
+#if I_health_recovery >= GEN_7
     "by 60 points.");
 #else
     "by 50 points.");
@@ -227,7 +227,7 @@ static const u8 sEnergyPowderDesc[] = _(
 static const u8 sEnergyRootDesc[] = _(
     "A bitter root\n"
     "that restores HP\n"
-#if I_HEALTH_RECOVERY >= GEN_7
+#if I_health_recovery >= GEN_7
     "by 120 points.");
 #else
     "by 200 points.");
@@ -3655,7 +3655,7 @@ static const u8 sFameCheckerDesc[] = _(
     "for instant recall.");
 
 static const u8 sTeachyTVDesc[] = _(
-    "A TV set tuned to\n"
+    "A Tv set tuned to\n"
     "an advice program\n"
     "for Trainers.");
 
@@ -3787,7 +3787,7 @@ static const u8 sLiftKeyDesc[] = _(
 static const u8 sSilphScopeDesc[] = _(
     "Silph Co's scope\n"
     "makes unseeable\n"
-    "POKéMON visible.");
+    "Pokémon visible.");
 
 static const u8 sTriPassDesc[] = _(
     "A pass for ferries\n"
