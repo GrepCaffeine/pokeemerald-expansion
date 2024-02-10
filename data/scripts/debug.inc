@@ -148,8 +148,8 @@ Debug_CheckROMSpace::
 	end
 
 Debug_ROMSize::
-	.string "ROM size: {STR_VAR_1}MB/32MB.\n"
-	.string "Free space: {STR_VAR_2}MB.$"
+	.string "Rom size: {STR_VAR_1}Mb/32Mb.\n"
+	.string "Free space: {STR_VAR_2}Mb.$"
 
 Debug_HatchAnEgg::
 	lockall
