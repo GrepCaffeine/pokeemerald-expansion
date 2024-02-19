@@ -17,10 +17,8 @@ EventScript_PCMainMenu::
 
 EventScript_AccessPC::
 	switch VAR_RESULT
-	case 0, EventScript_AccessPokemonStorage
-	case 1, EventScript_AccessPlayersPC
-	case 2, EventScript_AccessHallOfFame
-	case 3, EventScript_TurnOffPC
+	case 0, EventScript_AccessPlayersPC
+	case 1, EventScript_TurnOffPC
 	case MULTI_B_PRESSED, EventScript_TurnOffPC
 	end
 
@@ -39,8 +37,8 @@ EventScript_AccessPokemonStorage::
 	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
 	special ShowPokemonStorageSystemPC
 	waitstate
-	goto EventScript_PCMainMenu
-	end
+	return
+
 
 EventScript_AccessSomeonesPC::
 	msgbox gText_AccessedSomeonesPC, MSGBOX_DEFAULT
