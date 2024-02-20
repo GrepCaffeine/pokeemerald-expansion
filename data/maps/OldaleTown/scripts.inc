@@ -343,20 +343,28 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	walk_left
 	step_end
 
+OldaleTown_EventScript_WIPSign::
+	msgbox OldaleTown_Text_WIP, MSGBOX_SIGN
+	end
+
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
 	.string "progress.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
+	.string "I work at a POKéMON Center.\p"
 	.string "Can I get you to come with me?$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
-	.string "Just look for our blue roof.\p"
-	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
+	.string "This is a POKéMON Center.\n"
+	.string "Just look for our Gold roof.\p"
+	.string "We can faciliate access to the\n"
+	.string "Global Storage Network (GSN).\p"
+	.string "Additionally, well sell a variety\n"
+	.string "of goods to catch, train and heal\l"
+	.string "the POKéMON you will find during\l"
+	.string "your journey!\p"
 	.string "Here, I'd like you to have this as\n"
 	.string "a promotional item.$"
 
@@ -399,3 +407,6 @@ OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_Text_WIP:
+	.string "UNDER CONSTRUCTION\n"
+	.string "Check Back Soon!$"

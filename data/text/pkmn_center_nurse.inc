@@ -1,9 +1,10 @@
 gText_WouldYouLikeToRestYourPkmn::
 	.string "Hello, and welcome to\n"
 	.string "the POKéMON CENTER.\p"
-	.string "We restore your tired POKéMON\n"
-	.string "to full health.\p"
-	.string "Would you like to rest your POKéMON?$"
+	.string "We facilitate the transfer\n"
+	.string "of your POKéMON.\p"
+	.string "Would you like to access the\n"
+	.string "the Global Storage Network?$"
 
 gText_IllTakeYourPkmn::
 	.string "Okay, I'll take your POKéMON\n"
@@ -11,8 +12,8 @@ gText_IllTakeYourPkmn::
 
 gText_RestoredPkmnToFullHealth::
 	.string "Thank you for waiting.\p"
-	.string "We've restored your POKéMON\n"
-	.string "to full health.$"
+	.string "The requested transfer has\n"
+	.string "been completed.$"
 
 gText_WeHopeToSeeYouAgain::
 	.string "We hope to see you again!$"
@@ -20,8 +21,8 @@ gText_WeHopeToSeeYouAgain::
 gText_WelcomeCutShort::
 	.string "Hello, and welcome to\n"
 	.string "the POKéMON CENTER.\p"
-	.string "We restore your tired POKéMON\n"
-	.string "to full health.\p"
+	.string "We facilitate the transfer\n"
+	.string "of your POKéMON.\p"
 	.string "Would you like to…$"
 
 gText_NoticesGoldCard::
@@ -34,7 +35,7 @@ gText_NoticesGoldCard::
 	.string "you're the first TRAINER I've ever\l"
 	.string "seen with a GOLD CARD!\p"
 	.string "Okay, {PLAYER}, please allow me\n"
-	.string "the honor of resting your POKéMON!$"
+	.string "the honor of transfering your POKéMON!$"
 
 gText_YouWantTheUsual::
 	.string "I'm delighted to see you, {PLAYER}!\n"

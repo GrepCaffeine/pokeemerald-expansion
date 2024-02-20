@@ -998,6 +998,10 @@ Route104_EventScript_Darian::
 	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route104_EventScript_WIPSign::
+	msgbox OldaleTown_Text_WIP, MSGBOX_SIGN
+	end
+
 Route104_Text_BrineyLivesInSeasideCottage:
 	.string "That seaside cottage is where\n"
 	.string "MR. BRINEY lives.\p"
@@ -1170,3 +1174,8 @@ Route104_Text_BrendanPostBattle:
 	.string "making POKéMON battle.\p"
 	.string "Like MR. BRINEY, it's important to\n"
 	.string "become friends with your POKéMON.$"
+
+Route104_Text_WIP:
+	.string "UNDER CONSTRUCTION\n"
+	.string "Check Back Soon!$"
+	
