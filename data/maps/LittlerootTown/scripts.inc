@@ -1026,4 +1026,4 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 LittlerootTown_Text_WIP:
 	.string "UNDER CONSTRUCTION\n"
 	.string "Check Back Soon!$"
-	
+

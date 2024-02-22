@@ -1178,4 +1178,4 @@ Route104_Text_BrendanPostBattle:
 Route104_Text_WIP:
 	.string "UNDER CONSTRUCTION\n"
 	.string "Check Back Soon!$"
-	
+

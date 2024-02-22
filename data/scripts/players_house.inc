@@ -8,6 +8,7 @@ PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
 	return
 
 PlayersHouse_1F_EventScript_EnterHouseMovingIn::
+	setvar VAR_LITTLEROOT_CUSTOM_STATE, 0
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
 	applymovement VAR_0x8004, Common_Movement_FacePlayer
 	waitmovement 0
@@ -23,11 +24,13 @@ PlayersHouse_1F_EventScript_EnterHouseMovingIn::
 	end
 
 PlayersHouse_1F_EventScript_MomFacePlayerMovingInMale::
+	setvar VAR_BEDS_ENABLED, MALE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale::
+	setvar VAR_BEDS_ENABLED, FEMALE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
@@ -309,7 +312,6 @@ PlayersHouse_1F_EventScript_Mom::
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
-	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_1F_EventScript_MomHealsParty
 	goto_if_eq VAR_TEMP_1, 1, PlayersHouse_1F_EventScript_SeeYouHoney
 	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
@@ -678,3 +680,83 @@ PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale:
 EventScript_RunningShoesManual::
 	msgbox PlayersHouse_1F_Text_RunningShoesManual, MSGBOX_SIGN
 	end
+
+PlayersHouse_2F_EventScript_CheckRescue::
+	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_2F_EventScript_RestInBed
+	goto PlayersHouse_2F_EventScript_TooLazy
+	end
+
+PlayersHouse_2F_EventScript_TooLazy::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_2F_Movement_RestInBed
+	waitmovement 0
+	delay 30
+	msgbox PlayersHouse_2F_Text_Lazy, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PlayersHouse_2F_EventScript_RestInBed::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_2F_Movement_RestInBed
+	waitmovement 0
+	call Common_EventScript_OutOfCenterPartyHeal
+	incrementgamestat GAME_STAT_RESTED_AT_HOME
+	delay 30
+	msgbox PlayersHouse_2F_Text_Rested, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PlayersHouse_2F_Movement_RestInBed::
+	face_down
+	step_end
+
+
+PlayersHouse_2F_Text_Rested:
+	.string "You wake up feeling rested\n"
+	.string "and refreshed.$"
+
+PlayersHouse_2F_Text_Lazy:
+	.string "You just spent hours in a truck\n"
+	.string "and are far too restless to sleep!$"
+
+PlayersHouse_2F_EventScript_TriggerTest::
+	lockall
+	call_if_eq VAR_BEDS_ENABLED, MALE, PlayersHouse_2F_EventScript_IsMale
+	call_if_eq VAR_BEDS_ENABLED, FEMALE, PlayersHouse_2F_EventScript_IsFemale
+	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_2F_EventScript_BirchSaved
+	goto PlayersHouse_2F_EventScript_BirchNotSaved
+	release
+
+PlayersHouse_2F_EventScript_IsMale::
+	msgbox PlayersHouse_2F_Text_TTestMale, MSGBOX_DEFAULT
+	closemessage
+	return
+
+PlayersHouse_2F_EventScript_IsFemale::
+	msgbox PlayersHouse_2F_EventScript_IsFemale, MSGBOX_DEFAULT
+	closemessage
+	return
+
+PlayersHouse_2F_EventScript_BirchSaved::
+	msgbox PlayersHouse_2F_Text_TTestBirchSaved, MSGBOX_DEFAULT
+	closemessage
+	return
+
+PlayersHouse_2F_EventScript_BirchNotSaved::
+	msgbox PlayersHouse_2F_Text_TTestBirchNotSaved, MSGBOX_DEFAULT
+	closemessage
+	return
+
+
+PlayersHouse_2F_Text_TTestMale:
+	.string "I am a Dude!$"
+
+PlayersHouse_2F_Text_TTestFemale:
+	.string "I am a Lady!$"
+
+PlayersHouse_2F_Text_TTestBirchSaved:
+	.string "I saved Birch!$"
+
+PlayersHouse_2F_Text_TTestBirchNotSaved:
+	.string "Who's Birch?$"
+

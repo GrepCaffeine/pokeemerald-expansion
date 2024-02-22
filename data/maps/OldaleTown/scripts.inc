@@ -410,3 +410,4 @@ OldaleTown_Text_TownSign:
 OldaleTown_Text_WIP:
 	.string "UNDER CONSTRUCTION\n"
 	.string "Check Back Soon!$"
+

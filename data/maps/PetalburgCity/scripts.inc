@@ -773,4 +773,4 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 PetalburgCity_Text_WIP:
 	.string "UNDER CONSTRUCTION\n"
 	.string "Check Back Soon!$"
-	
+
