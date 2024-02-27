@@ -1843,3 +1843,11 @@ const u8 gText_Berries[] = _("BERRIES");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
+// MultiChoice Starter List
+const u8 gText_KantoStarters[] = _("Kanto");
+const u8 gText_JohtoStarters[] = _("Johto");
+const u8 gText_HoennStarters[] = _("Hoenn");
+const u8 gText_SinnohStarters[] = _("Sinnoh");
+const u8 gText_UnovaStarters[] = _("Unova");
+const u8 gText_KalosStarters[] = _("Kalos");
+const u8 gText_SpecialStarters[] = _("Special");

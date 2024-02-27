@@ -236,7 +236,7 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
-#define VAR_UNUSED_0x40DB                                0x40DB // Unused Var
+#define VAR_STARTER_BALL_ID                              0x40DB // Variable to determine which starter ball goes away.
 #define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
@@ -246,7 +246,7 @@
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
+#define VAR_CUSTOM_STARTER_MON                           0x40E5 // Used to set custom starter variable
 #define VAR_DAILY_SLOTS                                  0x40E6
 #define VAR_DAILY_WILDS                                  0x40E7
 #define VAR_DAILY_BLENDER                                0x40E8
@@ -266,13 +266,13 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_BEDS_ENABLED                                 0x40F7 // Used to Enable Bed Healing
 #define VAR_LITTLEROOT_CUSTOM_STATE                      0x40F8 // Variable for my custom start state.
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_STARTER_REGION                               0x40F9 // Multi-starter variable
+#define VAR_ROUTE101_PLAYER_RESCUE                       0x40FA // Positition identifier for player when rescued in 101.
+#define VAR_ADVENTURE_BEGINS                             0x40FB // Starter pokemon acquired, ready to conqure the world!
+#define VAR_RIVAL_COUNTER_MB                             0x40FC // Unused Var
+#define VAR_RIVAL_COUNTER_WALLY                          0x40FD // Unused Var
+#define VAR_RIVAL_MB_MON                                 0x40FE // Unused Var
+#define VAR_RIVAL_WALLY_MON                              0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

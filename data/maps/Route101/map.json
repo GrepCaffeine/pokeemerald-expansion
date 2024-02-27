@@ -40,8 +40,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 9,
-      "y": 13,
+      "x": 10,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
       "movement_range_x": 0,
@@ -52,22 +52,9 @@
       "flag": "FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
-      "x": 7,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route101_EventScript_BirchsBag",
-      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
-      "x": 10,
-      "y": 13,
+      "x": 11,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
       "movement_range_x": 0,
@@ -102,6 +89,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101_EventScript_Boy",
       "flag": "FLAG_HIDE_ROUTE_101_BOY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_SEE_ALL_DIRECTIONS",
+      "trainer_sight_or_berry_tree_id": "6",
+      "script": "Route101_EventScript_DadToRescue",
+      "flag": "FLAG_HIDE_DAD_TO_RESCUE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
+      "x": 7,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route101_EventScript_BirchsBag",
+      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG"
     }
   ],
   "warp_events": [
@@ -110,84 +123,39 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
-      "y": 19,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 19,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitSouth"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitSouth"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
+      "x": 7,
       "y": 16,
       "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 15,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 17,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
+      "var": "VAR_ADVENTURE_BEGINS",
+      "var_value": "1",
+      "script": "Route101_EventScript_PlayerRescueFour"
     },
     {
       "type": "trigger",
       "x": 7,
-      "y": 13,
+      "y": 15,
       "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitNorth"
+      "var": "VAR_ADVENTURE_BEGINS",
+      "var_value": "1",
+      "script": "Route101_EventScript_PlayerRescueThree"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 17,
+      "elevation": 3,
+      "var": "VAR_ADVENTURE_BEGINS",
+      "var_value": "1",
+      "script": "Route101_EventScript_PlayerRescueFive"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 14,
+      "elevation": 3,
+      "var": "VAR_ADVENTURE_BEGINS",
+      "var_value": "1",
+      "script": "Route101_EventScript_PlayerRescueTwo"
     }
   ],
   "bg_events": [

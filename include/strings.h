@@ -3055,4 +3055,13 @@ extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_BasePointsResetToZero[];
 
+// Starter Choices
+extern const u8 gText_KantoStarters[];
+extern const u8 gText_JohtoStarters[];
+extern const u8 gText_HoennStarters[];
+extern const u8 gText_SinnohStarters[];
+extern const u8 gText_UnovaStarters[];
+extern const u8 gText_KalosStarters[];
+extern const u8 gText_SpecialStarters[];
+
 #endif // GUARD_STRINGS_H
