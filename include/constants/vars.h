@@ -178,14 +178,14 @@
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
 #define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
-#define VAR_RIVAL_MB_MON2                                0x40A1 // Unused var
+#define VAR_UNUSED_0x40A1                                0x40A1 // Unused var
 #define VAR_SEAFLOOR_CAVERN_STATE                        0x40A2
 #define VAR_CABLE_CAR_STATION_STATE                      0x40A3
 #define VAR_SAFARI_ZONE_STATE                            0x40A4  // 0: In or out of SZ, 1: Player exiting SZ, 2: Player entering SZ
 #define VAR_TRICK_HOUSE_BEING_WATCHED_STATE              0x40A5
 #define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER               0x40A6
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE                   0x40A7
-#define VAR_RIVAL_MB_MON3                                0x40A8 // Unused Var
+#define VAR_ROUTE101_PLAYER_RESCUE                       0x40A8 // Position var for route 101 rescue by Norman
 #define VAR_CYCLING_CHALLENGE_STATE                      0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE                    0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE                   0x40AB
@@ -237,7 +237,7 @@
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
 #define VAR_STARTER_BALL_ID                              0x40DB // Variable to determine which starter ball goes away.
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused
+#define VAR_RIVAL_WALLY_MON                                0x40DC // Unused
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
 #define VAR_GIFT_UNUSED_2                                0x40DF // Var is written to, but never read
@@ -266,13 +266,13 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_BEDS_ENABLED                                 0x40F7 // Used to Enable Bed Healing
 #define VAR_LITTLEROOT_CUSTOM_STATE                      0x40F8 // Variable for my custom start state.
-#define VAR_STARTER_REGION                               0x40F9 // Multi-starter variable
-#define VAR_ROUTE101_PLAYER_RESCUE                       0x40FA // Positition identifier for player when rescued in 101.
-#define VAR_ADVENTURE_BEGINS                             0x40FB // Starter pokemon acquired, ready to conqure the world!
-#define VAR_RIVAL_COUNTER_MB                             0x40FC // Unused Var
-#define VAR_RIVAL_COUNTER_WALLY                          0x40FD // Unused Var
-#define VAR_RIVAL_MB_MON1                                0x40FE // Unused Var
-#define VAR_RIVAL_WALLY_MON                              0x40FF // Unused Var
+#define VAR_ADVENTURE_BEGINS                             0x40F9 // Track custom adventure changes
+#define VAR_RIVAL_COUNTER_MB                             0x40FA // Var to count MB Rival battles
+#define VAR_RIVAL_COUNTER_WALLY                          0x40FB // Var to count Wally Rival battles
+#define VAR_STARTER_REGION                               0x40FC // Multi-starter variable
+#define VAR_RIVAL_MB_MON1                                0x40FD // Var to store custom starter rival Mon [Initial Evo]
+#define VAR_RIVAL_MB_MON2                                0x40FE // Var to store custom starter rival Mon [Second Evo]
+#define VAR_RIVAL_MB_MON3                                0x40FF // Var to store custom starter rival Mon [Third Evo]
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
