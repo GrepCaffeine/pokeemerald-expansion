@@ -2065,101 +2065,105 @@ LittlerootTown_EventScript_CheckInWithParents::
 # 1036 "data/maps/LittlerootTown/scripts.pory"
 	message LittlerootTown_EventScript_CheckInWithParents_Text_0
 # 1037 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_GoSeeParents
+	waitmessage
 # 1038 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
+	delay 32
 # 1039 "data/maps/LittlerootTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_GoSeeParents
+# 1040 "data/maps/LittlerootTown/scripts.pory"
+	waitmovement 0
+# 1041 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_EventScript_WildSign::
-# 1043 "data/maps/LittlerootTown/scripts.pory"
-	lockall
-# 1044 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_EventScript_WildSign_Text_0
 # 1045 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1046 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittlerootTown_EventScript_WildSign_Text_0
+# 1047 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_EventScript_PlayerTurnToDad::
-# 1049 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 1050 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
 # 1051 "data/maps/LittlerootTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 1052 "data/maps/LittlerootTown/scripts.pory"
+	waitmovement 0
+# 1053 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_TalkWithDad
 	end
 
 
 LittlerootTown_EventScript_TalkWithDad::
-# 1056 "data/maps/LittlerootTown/scripts.pory"
-	delay 32
-# 1057 "data/maps/LittlerootTown/scripts.pory"
-	lockall
 # 1058 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_Text_DirtyDad, MSGBOX_NPC
+	delay 32
 # 1059 "data/maps/LittlerootTown/scripts.pory"
-	waitmessage
+	lockall
 # 1060 "data/maps/LittlerootTown/scripts.pory"
-	applymovement 11, LittlerootTown_Movement_DadGoHome
+	msgbox LittlerootTown_Text_DirtyDad, MSGBOX_NPC
 # 1061 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
+	waitmessage
 # 1062 "data/maps/LittlerootTown/scripts.pory"
-	removeobject 11
+	applymovement 11, LittlerootTown_Movement_DadGoHome
 # 1063 "data/maps/LittlerootTown/scripts.pory"
-	setvar VAR_ADVENTURE_BEGINS, 3
+	waitmovement 0
 # 1064 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 11
+# 1065 "data/maps/LittlerootTown/scripts.pory"
+	setvar VAR_ADVENTURE_BEGINS, 3
+# 1066 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_EventScript_ListenToDad::
-# 1069 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 1070 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
 # 1071 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_Text_Obedient, MSGBOX_SIGN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 1072 "data/maps/LittlerootTown/scripts.pory"
-	waitmessage
+	waitmovement 0
 # 1073 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_GetPokemon
+	msgbox LittlerootTown_Text_Obedient, MSGBOX_SIGN
 # 1074 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 1075 "data/maps/LittlerootTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_GetPokemon
+# 1076 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 	return
 
 
-# 1076 "data/maps/LittlerootTown/scripts.pory"
+# 1079 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Movement_DadGoHome:
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+# 1080 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+# 1080 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+# 1080 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+# 1080 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+# 1080 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+# 1080 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+# 1080 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
 	step_end
 
-# 1080 "data/maps/LittlerootTown/scripts.pory"
+# 1083 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Movement_GetPokemon:
-# 1081 "data/maps/LittlerootTown/scripts.pory"
+# 1084 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1082 "data/maps/LittlerootTown/scripts.pory"
+# 1085 "data/maps/LittlerootTown/scripts.pory"
 	face_up
 	step_end
 
-# 1085 "data/maps/LittlerootTown/scripts.pory"
+# 1088 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Movement_GoSeeParents:
-# 1086 "data/maps/LittlerootTown/scripts.pory"
+# 1089 "data/maps/LittlerootTown/scripts.pory"
 	walk_fast_down
 	step_end
 
@@ -2169,16 +2173,20 @@ LittlerootTown_EventScript_CheckInWithParents_Text_0:
 	.string "the folks before I head out!$"
 
 LittlerootTown_EventScript_WildSign_Text_0:
-# 1044 "data/maps/LittlerootTown/scripts.pory"
+# 1046 "data/maps/LittlerootTown/scripts.pory"
 	.string "Hello World!$"
 
 LittlerootTown_Text_Obedient::
-# 1089 "data/maps/LittlerootTown/scripts.pory"
+# 1092 "data/maps/LittlerootTown/scripts.pory"
 	.string "Wait! I can't disapoint Dad!\n"
 	.string "It's time to start my own adventure!$"
 
 LittlerootTown_Text_DirtyDad::
-# 1093 "data/maps/LittlerootTown/scripts.pory"
-	.string "Get your ass in there!\n"
-	.string "I'm gonna have a 'Talk' with your Mom\l"
-	.string ".... ;)$"
+# 1096 "data/maps/LittlerootTown/scripts.pory"
+	.string "Here we are! Birch and I go way back.\n"
+	.string "He should be able to set you\l"
+	.string "up with your very own POKéMON!\p"
+	.string "Make sure you swing by the\n"
+	.string "house before you set off.\p"
+	.string "You'll live to regret it\n"
+	.string "should you forget... barely.$"

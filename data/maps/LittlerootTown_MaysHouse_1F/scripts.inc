@@ -105,7 +105,7 @@ LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
 # 53 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 LittlerootTown_MaysHouse_1F_OnFrame:
 # 54 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-    map_script_2 VAR_ADVENTURE_BEGINS, 5, LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins
+	map_script_2 VAR_LITTLEROOT_CUSTOM_STATE, 2, LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins
 # 55 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
 # 56 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -823,26 +823,19 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 
 LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins::
 # 415 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	checkplayergender
-# 416 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	compare VAR_RESULT, FEMALE
-	goto_if_eq LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins_2
-	end
-
-LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins_1:
-	end
-
-LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins_2:
-# 417 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	lockall
-# 418 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 416 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	applymovement 8, Common_Movement_ExclamationMark
+# 417 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	applymovement 1, Common_Movement_ExclamationMark
+# 418 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	waitmovement 0
 # 419 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	delay 32
 # 420 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
-# 421 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	applymovement 8, LittlerootTown_MaysHouse_1F_Movement_DadCongrats
+# 421 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	waitmovement 0
 # 422 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox LittlerootTown_MaysHouse_1F_Text_DadCongrats, MSGBOX_NPC
 # 423 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -858,51 +851,52 @@ LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins_2:
 # 428 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	setvar VAR_ADVENTURE_BEGINS, 6
 # 429 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_LITTLEROOT_CUSTOM_STATE, 3
+# 430 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
-	goto LittlerootTown_MaysHouse_1F_EventScript_AdventureBegins_1
+	end
 
 
-# 437 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 434 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 LittlerootTown_MaysHouse_1F_Movement_DadCongrats:
-# 438 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 435 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_up
-# 439 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 436 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_left
-# 439 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 436 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_left
-# 439 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 436 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_left
-# 440 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 437 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_down
-# 440 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 437 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 443 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 440 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 LittlerootTown_MaysHouse_1F_Movement_DadLeaves:
-# 444 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 441 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_left
-# 445 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 442 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
 LittlerootTown_MaysHouse_1F_Text_DadCongrats::
-# 448 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 445 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "Dad: Haha!\n"
 	.string "Would you look at that honey!\l"
-	.string "Our kid is finally ready to set\l"
-	.string "out on their very own adventure!\p"
-	.string "Mom: Sniff Sniff\p"
-	.string "Dad: Now honey, don't be sad,\n"
-	.string "we both knew this day\l"
-	.string "was coming.\p"
+	.string "Our kid is finally ready for\l"
+	.string "their very own adventure!\p"
+	.string "Mom: sniff sniff\p"
+	.string "Dad: Now honey, don't be sad, we\n"
+	.string "both knew this day was coming.\p"
 	.string "Mom: sigh\n"
 	.string "You're right darling.\p"
 	.string "Mom: Be safe out there!\n"
-	.string "Don't hesitate to come home\l"
-	.string "for a rest every now and then!\p"
-	.string "Dad: Alright {PLAYER}, I need\n"
-	.string "to head back to the Gym.\p"
-	.string "When you think you are ready,\n"
-	.string "head to the Petalburg City\l"
-	.string "Gym for a match!$"
+	.string "Don't hesitate to come home for\l"
+	.string "a rest every now and then!\p"
+	.string "Dad: Alright {PLAYER}, I need to\n"
+	.string "head back to Petalburg.\p"
+	.string "When you think you are ready, come\n"
+	.string "to the Petalburg City Gym\l"
+	.string "for a match!$"

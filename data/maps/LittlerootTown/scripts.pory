@@ -1034,6 +1034,8 @@ LittlerootTown_Text_WIP:
 script LittlerootTown_EventScript_CheckInWithParents{
 	lockall
 	message(format("Wait! I should check in with\n the folks before I head out!"))
+	waitmessage
+	delay(32)
 	applymovement(OBJ_EVENT_ID_PLAYER,LittlerootTown_Movement_GoSeeParents)
 	waitmovement(0)
 	releaseall
@@ -1073,6 +1075,7 @@ script LittlerootTown_EventScript_ListenToDad{
 	applymovement(OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_GetPokemon)
 	waitmovement(0)
 }
+
 movement LittlerootTown_Movement_DadGoHome{
 	walk_left*7
 }
@@ -1091,6 +1094,7 @@ text LittlerootTown_Text_Obedient{
 }
 
 text LittlerootTown_Text_DirtyDad{
-	format("Get your ass in there!\NI'm gonna have a 'Talk' with your Mom\N.... ;)")
+	format("Here we are! Birch and I go way back.\NHe should be able to set you\Nup with your very own POKéMON!\p"
+			"Make sure you swing by the\Nhouse before you set off.\pYou'll live to regret it\Nshould you forget... barely.")
 }
 

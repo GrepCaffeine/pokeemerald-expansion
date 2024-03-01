@@ -52,7 +52,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 @ The below SS Ticket script uses Mays house state by accident(?), but theyre both set identically after the intro
 LittlerootTown_BrendansHouse_1F_OnFrame:
-    map_script_2 VAR_ADVENTURE_BEGINS, 5, LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins
+    map_script_2 VAR_LITTLEROOT_CUSTOM_STATE, 1, LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport
@@ -444,26 +444,24 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 `
 
 script LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins{
-    checkplayergender
-    if(var(VAR_RESULT) == MALE){
-        lockall
-        applymovement(8,Common_Movement_ExclamationMark)
-        delay(32)
-        waitmovement(0)
-        applymovement(8, LittlerootTown_BrendansHouse_1F_Movement_DadCongrats)
-        msgbox(LittlerootTown_BrendansHouse_1F_Text_DadCongrats, MSGBOX_NPC)
-        waitmessage
-        delay(32)
-        applymovement(8, LittlerootTown_BrendansHouse_1F_Movement_DadLeaves)
-        waitmovement(0)
-        removeobject(8)
-        setvar(VAR_ADVENTURE_BEGINS, 6)
-        releaseall
-    }
-    else{
-        end
-    }
-    end
+	lockall
+    applymovement(8,Common_Movement_ExclamationMark)
+	applymovement(1,Common_Movement_ExclamationMark)
+	waitmovement(0)
+    delay(32)
+    applymovement(8, LittlerootTown_BrendansHouse_1F_Movement_DadCongrats)
+	waitmovement(0)
+	delay(32)
+    msgbox(LittlerootTown_BrendansHouse_1F_Text_DadCongrats, MSGBOX_NPC)
+    waitmessage
+    delay(32)
+    applymovement(8, LittlerootTown_BrendansHouse_1F_Movement_DadLeaves)
+    waitmovement(0)
+    removeobject(8)
+    setvar(VAR_ADVENTURE_BEGINS, 6)
+	setvar(VAR_LITTLEROOT_CUSTOM_STATE, 3)
+    releaseall
+    return
 }
 
 movement LittlerootTown_BrendansHouse_1F_Movement_DadCongrats{
@@ -478,8 +476,8 @@ movement LittlerootTown_BrendansHouse_1F_Movement_DadLeaves{
 }
 
 text LittlerootTown_BrendansHouse_1F_Text_DadCongrats{
-    format("Dad: Haha!\NWould you look at that honey!\NOur kid is finally ready to set\Nout on their very own adventure!\p"
-            "Mom: Sniff Sniff\pDad: Now honey, don't be sad,\Nwe both knew this day\Nwas coming.\pMom: sigh\NYou're right darling.\p"
-            "Mom: Be safe out there!\NDon't hesitate to come home\Nfor a rest every now and then!\pDad: Alright {PLAYER}, I need\N"
-            "to head back to the Gym.\pWhen you think you are ready,\Nhead to the Petalburg City\NGym for a match!")
+    format("Dad: Haha!\NWould you look at that honey!\NOur kid is finally ready for\Ntheir very own adventure!\p"
+            "Mom: sniff sniff\pDad: Now honey, don't be sad, we\Nboth knew this day was coming.\pMom: sigh\NYou're right darling.\p"
+            "Mom: Be safe out there!\NDon't hesitate to come home for\Na rest every now and then!\pDad: Alright {PLAYER}, I need to\N"
+            "head back to Petalburg.\pWhen you think you are ready, come\Nto the Petalburg City Gym\N for a match!")
 }

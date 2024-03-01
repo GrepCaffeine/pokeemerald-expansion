@@ -51,12 +51,14 @@ PlayersHouse_1F_EventScript_MomGoSeeRoom::
 LittlerootTown_BrendansHouse_2F_EventScript_WallClock::
 	lockall
 	setvar VAR_0x8004, MALE
+	setvar VAR_PLAYER_IS_BRENDAN, 1
 	goto PlayersHouse_2F_EventScript_WallClock
 	end
 
 LittlerootTown_MaysHouse_2F_EventScript_WallClock::
 	lockall
 	setvar VAR_0x8004, FEMALE
+	setvar VAR_PLAYER_IS_MAY, 1
 	goto PlayersHouse_2F_EventScript_WallClock
 	end
 

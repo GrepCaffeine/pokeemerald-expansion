@@ -1923,6 +1923,7 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
     u32 personalityValue;
@@ -1954,6 +1955,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             const struct TrainerMon *partyData = trainer->party;
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
+            u32 custMonOne = VarGet(VAR_RIVAL_MB_MON1);
+            u32 custMonTwo = VarGet(VAR_RIVAL_MB_MON2);
+            u32 custMonThree = VarGet(VAR_RIVAL_MB_MON3);
 
             if (trainer->doubleBattle == TRUE)
                 personalityValue = 0x80;
@@ -1964,9 +1968,27 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
             personalityValue += personalityHash << 8;
             if (partyData[i].gender == TRAINER_MON_MALE)
-                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, partyData[i].species);
+            {
+                if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_TREECKO || partyData[i].species == SPECIES_MUDKIP || partyData[i].species == SPECIES_TORCHIC))
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, custMonOne);
+                else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_GROVYLE || partyData[i].species == SPECIES_MARSHTOMP || partyData[i].species == SPECIES_COMBUSKEN))
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, custMonTwo);
+                else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_SCEPTILE || partyData[i].species == SPECIES_SWAMPERT || partyData[i].species == SPECIES_BLAZIKEN))
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, custMonThree);                                        
+                else
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, partyData[i].species);
+            }
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
-                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
+            {
+                if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_TREECKO || partyData[i].species == SPECIES_MUDKIP || partyData[i].species == SPECIES_TORCHIC))
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, custMonOne);
+                else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_GROVYLE || partyData[i].species == SPECIES_MARSHTOMP || partyData[i].species == SPECIES_COMBUSKEN))
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, custMonTwo);
+                else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_SCEPTILE || partyData[i].species == SPECIES_SWAMPERT || partyData[i].species == SPECIES_BLAZIKEN))
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, custMonThree);  
+                else            
+                    personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
+            }        
             if (partyData[i].nature != 0)
                 ModifyPersonalityForNature(&personalityValue, partyData[i].nature - 1);
             if (partyData[i].isShiny)
@@ -1974,7 +1996,14 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_TREECKO || partyData[i].species == SPECIES_MUDKIP || partyData[i].species == SPECIES_TORCHIC))
+                CreateMon(&party[i], custMonOne, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_GROVYLE || partyData[i].species == SPECIES_MARSHTOMP || partyData[i].species == SPECIES_COMBUSKEN))
+                CreateMon(&party[i], custMonTwo, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_SCEPTILE || partyData[i].species == SPECIES_SWAMPERT || partyData[i].species == SPECIES_BLAZIKEN))
+                CreateMon(&party[i], custMonThree, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            else
+                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[i]);
@@ -1990,15 +2019,54 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             }
             if (partyData[i].ability != ABILITY_NONE)
             {
-                const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[partyData[i].species];
-                u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
-                for (j = 0; j < maxAbilities; ++j)
+                if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_TREECKO || partyData[i].species == SPECIES_MUDKIP || partyData[i].species == SPECIES_TORCHIC))
                 {
-                    if (speciesInfo->abilities[j] == partyData[i].ability)
-                        break;
+                    const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[custMonOne];
+                    u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
+                    for (j = 0; j < maxAbilities; ++j)
+                    {
+                        if (speciesInfo->abilities[j] == partyData[i].ability)
+                           break;
+                    }
+                    if (j < maxAbilities)
+                        SetMonData(&party[i], MON_DATA_ABILITY_NUM, &j);
                 }
-                if (j < maxAbilities)
-                    SetMonData(&party[i], MON_DATA_ABILITY_NUM, &j);
+                else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_GROVYLE || partyData[i].species == SPECIES_MARSHTOMP || partyData[i].species == SPECIES_COMBUSKEN))
+                {
+                    const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[custMonTwo];
+                    u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
+                    for (j = 0; j < maxAbilities; ++j)
+                    {
+                        if (speciesInfo->abilities[j] == partyData[i].ability)
+                           break;
+                    }
+                    if (j < maxAbilities)
+                        SetMonData(&party[i], MON_DATA_ABILITY_NUM, &j);
+                }
+                else if (trainer->trainerClass == TRAINER_CLASS_RIVAL && (partyData[i].species == SPECIES_SCEPTILE || partyData[i].species == SPECIES_SWAMPERT || partyData[i].species == SPECIES_BLAZIKEN))
+                {
+                    const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[custMonThree];
+                    u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
+                    for (j = 0; j < maxAbilities; ++j)
+                    {
+                        if (speciesInfo->abilities[j] == partyData[i].ability)
+                           break;
+                    }
+                    if (j < maxAbilities)
+                        SetMonData(&party[i], MON_DATA_ABILITY_NUM, &j);
+                }                  
+                else
+                {
+                    const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[partyData[i].species];
+                    u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
+                    for (j = 0; j < maxAbilities; ++j)
+                    {
+                        if (speciesInfo->abilities[j] == partyData[i].ability)
+                           break;
+                    }
+                    if (j < maxAbilities)
+                        SetMonData(&party[i], MON_DATA_ABILITY_NUM, &j);
+                }
             }
             SetMonData(&party[i], MON_DATA_FRIENDSHIP, &(partyData[i].friendship));
             if (partyData[i].ball != ITEM_NONE)

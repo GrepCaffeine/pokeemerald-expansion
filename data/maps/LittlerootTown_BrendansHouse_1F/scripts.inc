@@ -107,7 +107,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
 # 54 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 LittlerootTown_BrendansHouse_1F_OnFrame:
 # 55 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-    map_script_2 VAR_ADVENTURE_BEGINS, 5, LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins
+    map_script_2 VAR_LITTLEROOT_CUSTOM_STATE, 1, LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins
 # 56 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn
 # 57 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -885,86 +885,82 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 
 LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins::
 # 447 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	checkplayergender
-# 448 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	compare VAR_RESULT, MALE
-	goto_if_eq LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins_2
-	end
-
-LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins_1:
-	end
-
-LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins_2:
-# 449 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
-# 450 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 448 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	applymovement 8, Common_Movement_ExclamationMark
+# 449 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	applymovement 1, Common_Movement_ExclamationMark
+# 450 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	waitmovement 0
 # 451 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	delay 32
 # 452 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	waitmovement 0
-# 453 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	applymovement 8, LittlerootTown_BrendansHouse_1F_Movement_DadCongrats
-# 454 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	msgbox LittlerootTown_BrendansHouse_1F_Text_DadCongrats, MSGBOX_NPC
-# 455 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	waitmessage
-# 456 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	delay 32
-# 457 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	applymovement 8, LittlerootTown_BrendansHouse_1F_Movement_DadLeaves
-# 458 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 453 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	waitmovement 0
+# 454 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	delay 32
+# 455 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_1F_Text_DadCongrats, MSGBOX_NPC
+# 456 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	waitmessage
+# 457 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	delay 32
+# 458 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	applymovement 8, LittlerootTown_BrendansHouse_1F_Movement_DadLeaves
 # 459 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	removeobject 8
+	waitmovement 0
 # 460 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setvar VAR_ADVENTURE_BEGINS, 6
+	removeobject 8
 # 461 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	setvar VAR_ADVENTURE_BEGINS, 6
+# 462 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	setvar VAR_LITTLEROOT_CUSTOM_STATE, 3
+# 463 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
-	goto LittlerootTown_BrendansHouse_1F_EventScript_AdventureBegins_1
+	return
 
 
-# 469 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 467 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 LittlerootTown_BrendansHouse_1F_Movement_DadCongrats:
-# 470 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 468 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_up
-# 471 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 469 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_right
-# 471 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 469 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_right
-# 471 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 469 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_right
-# 472 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 470 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_down
-# 472 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 470 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 475 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 473 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 LittlerootTown_BrendansHouse_1F_Movement_DadLeaves:
-# 476 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 474 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_right
-# 477 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 475 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
 LittlerootTown_BrendansHouse_1F_Text_DadCongrats::
-# 480 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 478 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Dad: Haha!\n"
 	.string "Would you look at that honey!\l"
-	.string "Our kid is finally ready to set\l"
-	.string "out on their very own adventure!\p"
-	.string "Mom: Sniff Sniff\p"
-	.string "Dad: Now honey, don't be sad,\n"
-	.string "we both knew this day\l"
-	.string "was coming.\p"
+	.string "Our kid is finally ready for\l"
+	.string "their very own adventure!\p"
+	.string "Mom: sniff sniff\p"
+	.string "Dad: Now honey, don't be sad, we\n"
+	.string "both knew this day was coming.\p"
 	.string "Mom: sigh\n"
 	.string "You're right darling.\p"
 	.string "Mom: Be safe out there!\n"
-	.string "Don't hesitate to come home\l"
-	.string "for a rest every now and then!\p"
-	.string "Dad: Alright {PLAYER}, I need\n"
-	.string "to head back to the Gym.\p"
-	.string "When you think you are ready,\n"
-	.string "head to the Petalburg City\l"
-	.string "Gym for a match!$"
+	.string "Don't hesitate to come home for\l"
+	.string "a rest every now and then!\p"
+	.string "Dad: Alright {PLAYER}, I need to\n"
+	.string "head back to Petalburg.\p"
+	.string "When you think you are ready, come\n"
+	.string "to the Petalburg City Gym\l"
+	.string "for a match!$"
