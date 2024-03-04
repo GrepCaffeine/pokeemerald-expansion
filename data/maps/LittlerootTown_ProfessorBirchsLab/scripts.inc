@@ -2622,7 +2622,7 @@ NewProfessor_EventScript_ChooseMon_1:
 # 1265 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferspeciesname STR_VAR_2, VAR_RIVAL_MB_MON1
 # 1266 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	givemon VAR_CUSTOM_STARTER_MON, 10, ITEM_MASTER_BALL
+	givemon VAR_CUSTOM_STARTER_MON, 5
 # 1267 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewProfessor_EventScript_ChooseMon_4
