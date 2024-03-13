@@ -784,7 +784,6 @@ static const struct MenuAction MultichoiceList_Starters[] =
     {gText_SinnohStarters},
     {gText_UnovaStarters},
     {gText_KalosStarters},
-    {gText_SpecialStarters},
 };
 
 struct MultichoiceListStruct

@@ -533,7 +533,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_POKE_BALL, 10
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
@@ -541,7 +541,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_POKE_BALL, 10
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 1
@@ -1077,10 +1077,6 @@ script NewProfessor_EventScript_Birch{
 			call(StarterFade)
 			setvar(VAR_STARTER_REGION, 5)
 		}
-		elif(var(VAR_RESULT) == 6){
-			call(StarterFade)
-			setvar(VAR_STARTER_REGION, 6)
-		}
 		msgbox("Choose... but choose wisely.")
 		waitmessage
     	release
@@ -1110,36 +1106,43 @@ script NewProfessor_EventScript_PokeballOne{
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_BULBASAUR)
 			bufferspeciesname(STR_VAR_1, SPECIES_BULBASAUR)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_CHARMANDER)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_CHARMELEON)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_CHARIZARD)
         }
         elif(var(VAR_STARTER_REGION) == 1){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_CHIKORITA)
 			bufferspeciesname(STR_VAR_1, SPECIES_CHIKORITA)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_CYNDAQUIL)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_QUILAVA)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_TYPHLOSION)
         }
         elif(var(VAR_STARTER_REGION) == 2){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_TREECKO)
 			bufferspeciesname(STR_VAR_1, SPECIES_TREECKO)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_TORCHIC)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_COMBUSKEN)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_BLAZIKEN)
         }
         elif(var(VAR_STARTER_REGION) == 3){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_TURTWIG)
 			bufferspeciesname(STR_VAR_1, SPECIES_TURTWIG)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_CHIMCHAR)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_MONFERNO)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_INFERNAPE)
         }
         elif(var(VAR_STARTER_REGION) == 4){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_SNIVY)
 			bufferspeciesname(STR_VAR_1, SPECIES_SNIVY)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_TEPIG)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_PIGNITE)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_EMBOAR)
         }
         elif(var(VAR_STARTER_REGION) == 5){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_CHESPIN)
 			bufferspeciesname(STR_VAR_1, SPECIES_CHESPIN)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_FENNEKIN)
-        }
-        elif(var(VAR_STARTER_REGION) == 6){
-			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_LARVITAR)
-			bufferspeciesname(STR_VAR_1, SPECIES_LARVITAR)
-			setvar(VAR_RIVAL_MB_MON1, SPECIES_BAGON)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_BRAIXEN)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_DELPHOX)
         }
 		call(NewProfessor_EventScript_ChooseMon)
     }
@@ -1163,36 +1166,43 @@ script NewProfessor_EventScript_PokeballTwo{
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_SQUIRTLE)
 			bufferspeciesname(STR_VAR_1, SPECIES_SQUIRTLE)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_BULBASAUR)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_IVYSAUR)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_VENUSAUR)
         }
         elif(var(VAR_STARTER_REGION) == 1){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_TOTODILE)
 			bufferspeciesname(STR_VAR_1, SPECIES_TOTODILE)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_CHIKORITA)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_BAYLEEF)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_MEGANIUM)
         }
         elif(var(VAR_STARTER_REGION) == 2){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_MUDKIP)
 			bufferspeciesname(STR_VAR_1, SPECIES_MUDKIP)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_TREECKO)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_GROVYLE)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_SCEPTILE)
         }
         elif(var(VAR_STARTER_REGION) == 3){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_PIPLUP)
 			bufferspeciesname(STR_VAR_1, SPECIES_PIPLUP)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_TURTWIG)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_GROTLE)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_TORTERRA)
         }
         elif(var(VAR_STARTER_REGION) == 4){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_OSHAWOTT)
 			bufferspeciesname(STR_VAR_1, SPECIES_OSHAWOTT)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_SNIVY)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_SERVINE)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_SERPERIOR)
         }
         elif(var(VAR_STARTER_REGION) == 5){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_FROAKIE)
 			bufferspeciesname(STR_VAR_1, SPECIES_FROAKIE)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_CHESPIN)
-        }
-        elif(var(VAR_STARTER_REGION) == 6){
-			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_BAGON)
-			bufferspeciesname(STR_VAR_1, SPECIES_BAGON)
-			setvar(VAR_RIVAL_MB_MON1, SPECIES_BELDUM)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_QUILLADIN)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_CHESNAUGHT)
         }
 		call(NewProfessor_EventScript_ChooseMon)
     }
@@ -1216,36 +1226,43 @@ script NewProfessor_EventScript_PokeballThree{
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_CHARMANDER)
 			bufferspeciesname(STR_VAR_1, SPECIES_CHARMANDER)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_SQUIRTLE)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_WARTORTLE)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_BLASTOISE)
         }
         elif(var(VAR_STARTER_REGION) == 1){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_CYNDAQUIL)
 			bufferspeciesname(STR_VAR_1, SPECIES_CYNDAQUIL)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_TOTODILE)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_CROCONAW)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_FERALIGATR)
         }
         elif(var(VAR_STARTER_REGION) == 2){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_TORCHIC)
 			bufferspeciesname(STR_VAR_1, SPECIES_TORCHIC)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_MUDKIP)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_MARSHTOMP)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_SWAMPERT)
         }
         elif(var(VAR_STARTER_REGION) == 3){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_CHIMCHAR)
 			bufferspeciesname(STR_VAR_1, SPECIES_CHIMCHAR)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_PIPLUP)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_PRINPLUP)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_EMPOLEON)
         }
         elif(var(VAR_STARTER_REGION) == 4){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_TEPIG)
 			bufferspeciesname(STR_VAR_1, SPECIES_TEPIG)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_OSHAWOTT)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_DEWOTT)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_SAMUROTT)
         }
         elif(var(VAR_STARTER_REGION) == 5){
 			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_FENNEKIN)
 			bufferspeciesname(STR_VAR_1, SPECIES_FENNEKIN)
 			setvar(VAR_RIVAL_MB_MON1, SPECIES_FROAKIE)
-        }
-        elif(var(VAR_STARTER_REGION) == 6){
-			setvar(VAR_CUSTOM_STARTER_MON, SPECIES_BELDUM)
-			bufferspeciesname(STR_VAR_1, SPECIES_BELDUM)
-			setvar(VAR_RIVAL_MB_MON1, SPECIES_LARVITAR)
+			setvar(VAR_RIVAL_MB_MON2, SPECIES_FROGADIER)
+			setvar(VAR_RIVAL_MB_MON3, SPECIES_GRENINJA)
         }
 		call(NewProfessor_EventScript_ChooseMon)
     }

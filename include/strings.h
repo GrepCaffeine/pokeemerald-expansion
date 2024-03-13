@@ -3062,6 +3062,5 @@ extern const u8 gText_HoennStarters[];
 extern const u8 gText_SinnohStarters[];
 extern const u8 gText_UnovaStarters[];
 extern const u8 gText_KalosStarters[];
-extern const u8 gText_SpecialStarters[];
 
 #endif // GUARD_STRINGS_H

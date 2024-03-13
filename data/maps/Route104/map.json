@@ -625,16 +625,8 @@
     },
     {
       "type": "sign",
-      "x": 10,
-      "y": 39,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route104_EventScript_WIPSign"
-    },
-    {
-      "type": "sign",
-      "x": 11,
-      "y": 39,
+      "x": 20,
+      "y": 52,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route104_EventScript_WIPSign"

@@ -8270,9 +8270,15 @@ static const struct TrainerMon sParty_Ashley[] = {
 
 static const struct TrainerMon sParty_WallyMauville[] = {
     {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 16,
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 15,
     .species = SPECIES_RALTS,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 15,
+    .species = SPECIES_ABRA,
+    .moves = {MOVE_HIDDEN_POWER, MOVE_TELEPORT, MOVE_NONE, MOVE_NONE}
     }
 };
 

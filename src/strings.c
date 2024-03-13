@@ -1850,4 +1850,3 @@ const u8 gText_HoennStarters[] = _("Hoenn");
 const u8 gText_SinnohStarters[] = _("Sinnoh");
 const u8 gText_UnovaStarters[] = _("Unova");
 const u8 gText_KalosStarters[] = _("Kalos");
-const u8 gText_SpecialStarters[] = _("Special");
