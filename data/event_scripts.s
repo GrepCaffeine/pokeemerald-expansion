@@ -1067,3 +1067,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/ForrestOfDestiny/scripts.inc"
+
+	.include "data/maps/DewfordTown_PokemonCenter_1F2/scripts.inc"

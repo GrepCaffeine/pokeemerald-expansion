@@ -1144,15 +1144,13 @@ PetalburgCity_Gym_EventScript_GymStatue::
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 	.string "DAD: Hm?\p"
 	.string "Well, if it isn't {PLAYER}!\n"
-	.string "So you're all finished moving in?\p"
 	.string "I'm surprised that you managed to\n"
-	.string "get here by yourself.\p"
-	.string "Oh, I see.\n"
-	.string "You're with your POKéMON.\p"
-	.string "Hm… Then I guess you're going to\n"
-	.string "become a TRAINER like me, {PLAYER}.\p"
-	.string "That's great news!\n"
-	.string "I'll be looking forward to it!$"
+	.string "get here so quickly.\p"
+	.string "Well, you are my kid, so I guess\n"
+	.string "I shouldn't be surprised.\p"
+	.string "You have the makings of a great\n"
+	.string "POKéMON TRAINER, {PLAYER}.\p"
+	.string "Your adventure has only just begun!$"
 
 PetalburgCity_Gym_Text_WallyIdLikeAPokemon:
 	.string "Um… I…\n"

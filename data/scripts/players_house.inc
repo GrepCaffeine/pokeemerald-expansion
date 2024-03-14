@@ -8,7 +8,6 @@ PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
 	return
 
 PlayersHouse_1F_EventScript_EnterHouseMovingIn::
-	setvar VAR_LITTLEROOT_CUSTOM_STATE, 0
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
 	applymovement VAR_0x8004, Common_Movement_FacePlayer
 	waitmovement 0

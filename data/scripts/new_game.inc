@@ -279,6 +279,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_STARTER_1
 	setflag FLAG_STARTER_2
 	setflag FLAG_STARTER_3
-	setvar VAR_LITTLEROOT_CUSTOM_STATE, 3
+	setvar VAR_LITTLEROOT_CUSTOM_STATE, 0
 	call EventScript_ResetAllBerries
 	end
